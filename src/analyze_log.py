@@ -19,6 +19,17 @@ def pratos_maria(content):
     return values
 
 
+def count_arnaldo(content):
+    total_prato = []
+
+    for item in content:
+        if item["cliente"] == "arnaldo" and item["prato"] == "hamburguer":
+            total_prato.append(item)
+    
+    return len(total_prato)
+
+    
+
 def analyze_log(path_to_file):
     extension = os.path.splitext(path_to_file)[1]
     
@@ -26,8 +37,8 @@ def analyze_log(path_to_file):
         try:
             with open(path_to_file) as file:
                 file_csv = csv.DictReader(file, fieldnames=["cliente", "prato", "dia"])
+                print(count_arnaldo(file_csv))
                 max_pedido_maria = pratos_maria(file_csv)
-
 
             with open('data/mkt_campaign.txt', 'w') as file:
                 file.write(max_pedido_maria)
