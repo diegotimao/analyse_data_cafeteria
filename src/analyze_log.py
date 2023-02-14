@@ -37,11 +37,11 @@ def analyze_log(path_to_file):
         try:
             with open(path_to_file) as file:
                 file_csv = csv.DictReader(file, fieldnames=["cliente", "prato", "dia"])
-                print(count_arnaldo(file_csv))
                 max_pedido_maria = pratos_maria(file_csv)
+                toral_pratos_arnaldo = count_arnaldo(file_csv)
 
             with open('data/mkt_campaign.txt', 'w') as file:
-                file.write(max_pedido_maria)
+                file.write(f"{max_pedido_maria}, \n{toral_pratos_arnaldo}")
         except FileNotFoundError:
             raise FileNotFoundError(f"Arquivo inexistente: {path_to_file}")
     else:
