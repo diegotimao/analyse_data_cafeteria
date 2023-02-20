@@ -2,8 +2,6 @@ import csv
 from collections import Counter
 import os
 
-# Qual o prato mais pedido por 'maria'?
-
 
 def pratos_maria(content):
     lista_ped = []
@@ -13,8 +11,6 @@ def pratos_maria(content):
             lista_ped.append(item.split(",")[1])
 
     return Counter(lista_ped).most_common(1)[0][0]
-
-# Quantas vezes 'arnaldo' pediu 'hamburguer'?
 
 
 def count_arnaldo(content):
@@ -27,7 +23,6 @@ def count_arnaldo(content):
     return len(total_prato)
 
 
-# Quais pratos 'joao' nunca pediu?
 def uneaten_dishes_joao(content):
     list_pratos = set()
     lista_pratos_joao = set()
@@ -42,7 +37,6 @@ def uneaten_dishes_joao(content):
     return new_value
 
 
-# Quais dias 'joao' nunca foi à lanchonete?
 def not_week_days(content):
     open_days = set()
     days_joao = set()
@@ -63,8 +57,6 @@ def analyze_log(path_to_file):
         try:
 
             with open(path_to_file, "r") as file:
-                # file_content = csv.DictReader(
-                #     file, fieldnames=["cliente", "prato", "dia"])
                 file_content = file.readlines()
 
             not_days_joao = not_week_days(file_content)
