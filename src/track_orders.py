@@ -1,11 +1,14 @@
 
 class TrackOrders:
+    def __init__(self) -> list:
+        self.data = []
     # aqui deve expor a quantidade de estoque
+
     def __len__(self):
-        pass
+        return len(self.data)
 
     def add_new_order(self, customer, order, day):
-        pass
+        self.data.append([customer, order, day])
 
     def get_most_ordered_dish_per_customer(self, customer):
         pass
