@@ -23,18 +23,17 @@ def count_arnaldo(content):
     return len(total_prato)
 
 
-def uneaten_dishes_joao(content):
-    list_pratos = set()
-    lista_pratos_joao = set()
+def uneaten_dishes_joao(client, content):
+    list_dishes = set()
+    lista_dishes_client = set()
 
     for item in content:
-        list_pratos.add(item.split(",")[1])
+        list_dishes.add(item[1])
 
-        if item.startswith("joao"):
-            lista_pratos_joao.add(item.split(",")[1])
+        if item[0] == client:
+            lista_dishes_client.add(item[1])
 
-    new_value = list_pratos.difference(lista_pratos_joao)
-    return new_value
+    return list_dishes.difference(lista_dishes_client)
 
 
 def not_week_days(client, content):
@@ -42,10 +41,10 @@ def not_week_days(client, content):
     days_joao = set()
 
     for item in content:
-        open_days.add(item.split(",")[2].replace("\n", ""))
+        open_days.add(item[2])
 
-        if item.startswith("joao"):
-            days_joao.add(item.split(",")[2].replace("\n", ""))
+        if item[0] == client:
+            days_joao.add(item[2])
 
     return open_days.difference(days_joao)
 
@@ -59,10 +58,10 @@ def analyze_log(path_to_file):
             with open(path_to_file, "r") as file:
                 file_content = file.readlines()
 
-            not_days_joao = not_week_days(file_content)
-            max_pedido_maria = pratos_maria(file_content)
+            not_days_joao = not_week_days("arnaldo", file_content)
+            max_pedido_maria = client_dishes("maria", file_content)
             toral_pratos_arnaldo = count_arnaldo(file_content)
-            dishes_joao = uneaten_dishes_joao(file_content)
+            dishes_joao = uneaten_dishes_joao("joao", file_content)
 
             with open('data/mkt_campaign.txt', 'w', encoding="utf-8") as file:
                 file.write(
