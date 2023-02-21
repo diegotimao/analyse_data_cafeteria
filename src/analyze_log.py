@@ -37,7 +37,7 @@ def uneaten_dishes_joao(content):
     return new_value
 
 
-def not_week_days(content):
+def not_week_days(client, content):
     open_days = set()
     days_joao = set()
 
