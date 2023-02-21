@@ -3,12 +3,12 @@ from collections import Counter
 import os
 
 
-def pratos_maria(content):
+def pratos_maria(client, content):
     lista_ped = []
 
     for item in content:
-        if item.startswith("maria"):
-            lista_ped.append(item.split(",")[1])
+        if item[0] == client:
+            lista_ped.append(item[1])
 
     return Counter(lista_ped).most_common(1)[0][0]
 
