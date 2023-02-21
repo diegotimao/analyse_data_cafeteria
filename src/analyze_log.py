@@ -3,7 +3,7 @@ from collections import Counter
 import os
 
 
-def pratos_maria(client, content):
+def client_dishes(client, content):
     lista_ped = []
 
     for item in content:
