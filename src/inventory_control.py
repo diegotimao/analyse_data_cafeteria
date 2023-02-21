@@ -34,4 +34,4 @@ class InventoryControl:
                 return False
 
     def get_quantities_to_buy(self):
-        pass
+        return self.inventory_stock
