@@ -17,8 +17,9 @@ def count_arnaldo(content):
     total_prato = []
 
     for item in content:
-        if item.split(",")[0] == "arnaldo" and item.split(",")[1] == "hamburguer":
-            total_prato.append(item)
+        if item.split(",")[0] == "arnaldo":
+            if item.split(",")[1] == "hamburguer":
+                total_prato.append(item)
 
     return len(total_prato)
 
@@ -65,7 +66,10 @@ def analyze_log(path_to_file):
 
             with open('data/mkt_campaign.txt', 'w', encoding="utf-8") as file:
                 file.write(
-                    f"{max_pedido_maria}\n{toral_pratos_arnaldo}\n{dishes_joao}\n{not_days_joao}")
+                    f"{max_pedido_maria}\n",
+                    f"{toral_pratos_arnaldo}\n"
+                    f"{dishes_joao}\n",
+                    f"{not_days_joao}")
 
         except FileNotFoundError:
             raise FileNotFoundError(f"Arquivo inexistente: {path_to_file}")
