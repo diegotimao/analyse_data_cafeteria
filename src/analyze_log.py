@@ -23,7 +23,7 @@ def count_arnaldo(content):
     return len(total_prato)
 
 
-def uneaten_dishes_joao(client, content):
+def uneaten_client_dishes(client, content):
     list_dishes = set()
     lista_dishes_client = set()
 
