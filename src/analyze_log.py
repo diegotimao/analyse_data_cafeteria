@@ -61,7 +61,7 @@ def analyze_log(path_to_file):
             not_days_joao = not_week_days("arnaldo", file_content)
             max_pedido_maria = client_dishes("maria", file_content)
             toral_pratos_arnaldo = count_arnaldo(file_content)
-            dishes_joao = uneaten_dishes_joao("joao", file_content)
+            dishes_joao = uneaten_client_dishes("joao", file_content)
 
             with open('data/mkt_campaign.txt', 'w', encoding="utf-8") as file:
                 file.write(
