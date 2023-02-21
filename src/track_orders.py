@@ -1,6 +1,6 @@
 from src.analyze_log import (
     client_dishes,
-    not_week_days
+    uneaten_client_dishes
 )
 
 
@@ -19,7 +19,7 @@ class TrackOrders:
         return client_dishes(customer, self.data)
 
     def get_never_ordered_per_customer(self, customer):
-        return not_week_days(customer, self.data)
+        return uneaten_client_dishes(customer, self.data)
 
     def get_days_never_visited_per_customer(self, customer):
         pass
