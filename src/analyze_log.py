@@ -64,9 +64,9 @@ def analyze_log(path_to_file):
             dishes_joao = uneaten_client_dishes("joao", file_content)
 
             with open('data/mkt_campaign.txt', 'w', encoding="utf-8") as file:
-                file.write(
+                file.writelines(
                     f"{max_pedido_maria}\n",
-                    f"{toral_pratos_arnaldo}\n"
+                    f"{toral_pratos_arnaldo}\n",
                     f"{dishes_joao}\n",
                     f"{not_days_joao}")
 
