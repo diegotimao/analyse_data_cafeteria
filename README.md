@@ -43,8 +43,9 @@ python main.py
 - Quantas vezes 'arnaldo' pediu 'hamburguer'?
 - Quais pratos 'joao' nunca pediu?
 - Quais dias 'joao' nunca foi à lanchonete?
-- Controle de Estoque (Requisito Bônus)
-- O módulo inventory_control.py implementa o controle de estoque e fornece uma lista de compras. O estoque é atualizado automaticamente após cada pedido. Se algum ingrediente acabar, os pratos que o utilizam são removidos do cardápio.
+- Controle de Estoque
+- O módulo inventory_control.py implementa o controle de estoque e fornece uma lista de compras. 
+- O estoque é atualizado automaticamente após cada pedido. Se algum ingrediente acabar, os pratos que o utilizam são removidos do cardápio.
 
 #### Análise Contínua
 
